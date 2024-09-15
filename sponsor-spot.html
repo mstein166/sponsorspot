@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SponsorSpot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="fade-in">SponsorSpot</h1>
+        <a href="faq.html">FAQ</a>
+    </div>
+
+
+    <!-- Example Container 1 -->
+    <div class="container">
+        <div class="deal">20% off a dozen donut holes</div>
+        <div class="location">
+            <strong>Mag's</strong><br>
+            📍 100 Main St, Newport Beach, USA
+        </div>
+        <div class="sponsor">Sponsored by: <a href="#" style="color: blue;">Einstein Pediatrics</a></div>
+        <div class="buttons">
+            <a href="#" class="button social">📤 Social Media</a>
+            <button class="button get-deal" onclick="openModal(this)">Get Deal</button>
+        </div>
+    </div>
+
+    <!-- Example Container 2 -->
+    <div class="container">
+        <div class="deal">15% off a latte on Thursdays</div>
+        <div class="location">
+            <strong>Moongoat Coffee</strong><br>
+            📍 123 Main St, Anytown, USA
+        </div>
+        <div class="sponsor">Sponsored by: <a href="#" style="color: blue;">John Doe Realty</a></div>
+        <div class="buttons">
+            <a href="#" class="button social">📤 Social Media</a>
+            <button class="button get-deal" onclick="openModal(this)">Get Deal</button>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="dealModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalDealText">Deal information will appear here.</p>
+            <img id="modalImage" class="modal-image" src="" alt="Deal Image">
+        </div>
+    </div>
+
+    <script>
+        function openModal(button) {
+            // Find the closest container to the clicked button
+            var container = button.closest('.container');
+
+            // Get the deal text from the container
+            var dealText = container.querySelector('.deal').innerText;
+
+            // Set the deal text in the modal
+            document.getElementById('modalDealText').innerText = dealText;
+            document.getElementById('modalImage').src = 'download.png';
+
+            // Display the modal
+            document.getElementById('dealModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            // Hide the modal
+            document.getElementById('dealModal').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

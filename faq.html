@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(196, 156, 229);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button {
+            position: fixed;
+            font-size: larger;
+            font-weight: bold;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgb(196, 156, 229);
+            box-shadow: 0 2px 4px rgba(102, 145, 214, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            /* Distribute space between children */
+            align-items: center;
+            /* Center items vertically */
+            padding: 0 20px;
+            /* Add some padding */
+            height: 60px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgb(252, 247, 252);
+            padding: 10px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #e1ceea;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+
+        .faq-question:hover {
+            background-color: #d4d4d4;
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .arrow {
+            width: 10px;
+            height: 10px;
+            border: solid #333;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+            transition: transform 0.3s ease;
+        }
+
+        .arrow.up {
+            transform: rotate(-135deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <a style="text-decoration: none" href="sponsor-spot.html" class="back-button">Click to go back to deal home!</a>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is SponsorSpot?</span>
+                <div class="arrow"></div>
+            </div>
+            <div class="faq-answer">
+                <p>SponsorSpot is a platform that connects local businesses with consumers through special deals and
+                    promotions.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I get started?</span>
+                <div class="arrow"></div>
+            </div>
+            <div class="faq-answer">
+                <p>To get started, simply sign up for an account and browse the available deals. You can also create and
+                    manage your own deals if you're a business.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Is there a fee to use SponsorSpot?</span>
+                <div class="arrow"></div>
+            </div>
+            <div class="faq-answer">
+                <p>There is no fee for consumers to use SponsorSpot. Businesses may incur fees depending on the features
+                    they choose to use.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I get in touch?</span>
+                <div class="arrow"></div>
+            </div>
+            <div class="faq-answer">
+                <p>Shoot us an e-mail at mstein166@gmail.com! We love to hear how users are liking SponsorSpot, and are
+                    here to help with any concerns or questions you might have.</p>
+            </div>
+        </div>
+    </div>
+
+    <body>
+        <div id="root"></div>
+    </body>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                const arrow = item.querySelector('.arrow');
+
+                // Toggle the display of the answer
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    arrow.classList.remove('up');
+                } else {
+                    answer.style.display = 'block';
+                    arrow.classList.add('up');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
