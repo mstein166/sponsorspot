@@ -87,7 +87,7 @@ h1 {
 }
 
 .social {
-    background-color: white;
+    background-color: rgb(244, 85, 223);
     color: blue;
     border: 1px solid blue;
 }
@@ -113,7 +113,7 @@ h1 {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #7518d8;
     width: 80%;
     max-width: 400px;
     text-align: center;
